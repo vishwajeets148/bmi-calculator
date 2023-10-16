@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>BMI Calculator - Body Mass Index </title>
+        <link rel="icon" type="image/x-icon" href="./calculator.png">
+</head>
+<body>
+
+	<div>
+		<h2>BMI Calculator</h2>
+		<p class="text">Height</p>
+		<input type="text" id=height>
+		<p class="text">Weight</p>
+		<input type="text" id="weight">
+		<p id="result"></p>
+		<button id="btn" onclick="bmi()">Calculator</button>
+      <p id="info">Please enter height [cm] and weight [kg]</p> 
+	</div>
+	<style type="text/css">
+		body{
+			
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			font-family: sans-serif;
+			height:100vh;
+			background-image: url(./body.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+		   }
+
+		 div{
+		 	width: 500px;
+		 	position: absolute;
+		 	top:50%;
+		 	left:50%;
+		 	background-color: rgb(0, 0, 0, 0.8);
+		 	transform: translate(-50%, -50%);
+		 	padding: 5px;
+		 	box-shadow: 2px 2px 20px skyblue;
+		 	border-radius: 5px;
+		 }
+
+		 h2{
+		 	font-size: 30px;
+		 	font-weight: 600;
+		 	color: white;
+		 }
+
+		 .text{
+		 	text-align: left;
+		 	margin-left: 100px;
+		 	color: white;
+		 }
+
+		 #weight, #height{
+		 	color: white;
+		 	text-align: left;
+		 	font-size: 20px;
+		    font-weight: 200;
+		    border: 1px solid white;
+		    width: 300px;
+		    background-color: transparent;
+		    border-radius: 2px;
+		    outline: none;
+		 }
+
+		 #result{
+		 	color: white;
+		 }
+		  #btn{
+		  	margin-top: inherit;
+		  	border: none;
+		  	color: white;
+		  	background-color: gray;
+		  	width: 150px;
+		  	padding: 10px;
+		  	outline: none;
+		  	border-radius: 2px;
+		  }
+
+		  #info{
+		  	color: white;
+		  	text-size:15px;
+		  }
+
+	</style>
+
+	<script type="text/javascript">
+		function bmi(){
+			var h = document.getElementById('height').value;
+			var w = document.getElementById('weight').value;
+			var bmi = w / (h /100 * h / 100);
+			var total = bmi.toFixed(2);
+			document.getElementById('result').innerHTML= "Your BMI is " + total
+		}
+		
+	</script>
+</body>
+</html>
